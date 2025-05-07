@@ -65,11 +65,18 @@ LOG ON
 );
 GO
 
+
+/*
+-- Add memory-optimized filegroup
+ALTER DATABASE LibraryManagementSystem SET AUTO_CLOSE OFF;
+GO
+
 -- Add memory-optimized filegroup
 ALTER DATABASE LibraryManagementSystem
     ADD FILEGROUP LibraryMS_InMemory CONTAINS MEMORY_OPTIMIZED_DATA;
 GO
 
+-- Add container to the memory-optimized filegroup
 ALTER DATABASE LibraryManagementSystem
 ADD FILE 
 (
@@ -83,6 +90,7 @@ GO
 ALTER DATABASE LibraryManagementSystem SET MEMORY_OPTIMIZED_ELEVATE_TO_SNAPSHOT = ON;
 GO
 
+*/
 -- Set the database to use
 USE LibraryManagementSystem;
 GO
